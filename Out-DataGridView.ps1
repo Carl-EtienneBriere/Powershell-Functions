@@ -1,72 +1,71 @@
-Function Out-DataGridView
-{
-    <#
-    .SYNOPSIS
-        Displays data in a Windows Forms DataGridView.
+Function Out-DataGridView {
+<#
+.SYNOPSIS
+    Displays data in a Windows Forms DataGridView.
 
-    .FUNCTIONALITY
-        This function takes data and displays it in a DataGridView in a Windows Forms window.
-        It allows customization of window title, font, border style, and more.
+.FUNCTIONALITY
+    This function takes data and displays it in a DataGridView in a Windows Forms window.
+    It allows customization of window title, font, border style, and more.
 
-    .DESCRIPTION
-        The `Out-DataGridView` function takes input data and displays it in a DataGridView control within a Windows Forms window. 
-        You can customize various window properties such as title, icon, size, and appearance of the DataGridView.
-        The data is dynamically bound to the DataGridView, and various styles can be applied, including alternating row colors.
-        The function supports user interaction with features like column resizing and row selection.
+.DESCRIPTION
+    The `Out-DataGridView` function takes input data and displays it in a DataGridView control within a Windows Forms window. 
+    You can customize various window properties such as title, icon, size, and appearance of the DataGridView.
+    The data is dynamically bound to the DataGridView, and various styles can be applied, including alternating row colors.
+    The function supports user interaction with features like column resizing and row selection.
 
-    .PARAMETER Data
-        The data to display in the DataGridView. This can be passed via pipeline.
+.PARAMETER Data
+    The data to display in the DataGridView. This can be passed via pipeline.
 
-    .PARAMETER WindowTitle
-        The title of the window. Default is "Out-DataGridView".
+.PARAMETER WindowTitle
+    The title of the window. Default is "Out-DataGridView".
 
-    .PARAMETER WindowIconPath
-        The path to the icon to display in the window. Default is `$null`.
+.PARAMETER WindowIconPath
+    The path to the icon to display in the window. Default is `$null`.
 
-    .PARAMETER WindowWidth
-        The width of the window. Default is 1300.
+.PARAMETER WindowWidth
+    The width of the window. Default is 1300.
 
-    .PARAMETER WindowHeight
-        The height of the window. Default is 730.
+.PARAMETER WindowHeight
+    The height of the window. Default is 730.
 
-    .PARAMETER Font
-        The font for the DataGridView. Default is "Arial".
+.PARAMETER Font
+    The font for the DataGridView. Default is "Arial".
 
-    .PARAMETER FontSize
-        The font size for the DataGridView text. Default is 12.
+.PARAMETER FontSize
+    The font size for the DataGridView text. Default is 12.
 
-    .PARAMETER AlternateRowHexColor
-        The background color for alternating rows in hexadecimal format. Default is "#F2F2F2".
+.PARAMETER AlternateRowHexColor
+    The background color for alternating rows in hexadecimal format. Default is "#F2F2F2".
 
-    .PARAMETER FilterPanelWidth
-        The width of the filter panel on the left side of the DataGridView. Default is 200.
+.PARAMETER FilterPanelWidth
+    The width of the filter panel on the left side of the DataGridView. Default is 200.
 
-    .PARAMETER BorderSize
-        The size of the border around the DataGridView. Default is 20.
+.PARAMETER BorderSize
+    The size of the border around the DataGridView. Default is 20.
 
-    .PARAMETER BorderStyle
-        The border style of the window. Default is "Sizable".
-        Options include: Fixed3d, FixedDialog, FixedSingle, FixedToolWindow, None, Sizable, SizableToolWindow.
+.PARAMETER BorderStyle
+    The border style of the window. Default is "Sizable".
+    Options include: Fixed3d, FixedDialog, FixedSingle, FixedToolWindow, None, Sizable, SizableToolWindow.
 
-    .EXAMPLE
-        # Display a list of processes in a DataGridView
-        Get-Process | Select-Object Name, Id, CPU | Out-DataGridView
+.EXAMPLE
+    # Display a list of processes in a DataGridView
+    Get-Process | Select-Object Name, Id, CPU | Out-DataGridView
 
-    .EXAMPLE
-        # Display files in a folder with custom window title and icon
-        Get-ChildItem -Path "C:\Users" | Out-DataGridView -WindowTitle "User Files" -WindowIconPath "C:\path\to\icon.ico"
+.EXAMPLE
+    # Display files in a folder with custom window title and icon
+    Get-ChildItem -Path "C:\Users" | Out-DataGridView -WindowTitle "User Files" -WindowIconPath "C:\path\to\icon.ico"
 
-    .EXAMPLE
-        # Display the output of Get-Service in a DataGridView
-        Get-Service | Out-DataGridView -WindowTitle "Services in System" -Font "Calibri" -FontSize 14
-    
-    .LINK
-        Créé par : Carl-Étienne Brière
-        Date de création : 2025-01-31
+.EXAMPLE
+    # Display the output of Get-Service in a DataGridView
+    Get-Service | Out-DataGridView -WindowTitle "Services in System" -Font "Calibri" -FontSize 14
 
-        Created by : Carl-Étienne Brière
-        Creation date : 2025-01-31
-    #>
+.LINK
+    Créé par : Carl-Étienne Brière
+    Date de création : 2025-01-31
+
+    Created by : Carl-Étienne Brière
+    Creation date : 2025-01-31
+#>
 
     [Alias("ODGV")]
     [CmdletBinding()]
