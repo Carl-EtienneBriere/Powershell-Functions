@@ -1,19 +1,20 @@
-Function Get-InstalledSoftware {
-<#
-.SYNOPSIS
-    Retrieves a list of installed software on the system.
-
-.DESCRIPTION
-    This function fetches installed software from both 64-bit and 32-bit 
-    registry paths (on 64-bit systems). It returns application name, 
-    version, product code, and uninstall string.
-
-.OUTPUTS
-    PSCustomObject: Contains Application, Version, ProductCode, and UninstallString.
-
-.NOTES
-    Created by : Carl-Étienne Brière
-#>
+Function Get-InstalledSoftware
+{
+    <#
+    .SYNOPSIS
+        Retrieves a list of installed software on the system.
+    
+    .DESCRIPTION
+        This function fetches installed software from both 64-bit and 32-bit 
+        registry paths (on 64-bit systems). It returns application name, 
+        version, product code, and uninstall string.
+    
+    .OUTPUTS
+        PSCustomObject: Contains Application, Version, ProductCode, and UninstallString.
+    
+    .NOTES
+        Created by : Carl-Étienne Brière
+    #>
     # Define registry paths for installed software (64-bit and 32-bit on 64-bit systems)
     $UninstallKeys = @(
         "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
