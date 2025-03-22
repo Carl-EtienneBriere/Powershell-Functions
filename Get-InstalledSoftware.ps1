@@ -40,4 +40,4 @@ Function Get-InstalledSoftware {
 
     # Return sorted output excluding unnecessary properties
     Return $SoftwareList | Select-Object * -ExcludeProperty PSComputerName, RunspaceID | Sort-Object Application
-    }
+}
